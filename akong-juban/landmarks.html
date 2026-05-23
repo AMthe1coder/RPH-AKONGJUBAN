@@ -12,7 +12,14 @@
   <div class="page-bg"></div>
 
   <nav>
-    <div class="nav-brand-row">
+    <div class="nav-inner">
+      <ul class="nav-links nav-links-desktop">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="landmarks.html" class="active">Landmarks</a></li>
+        <li><a href="hotspots.html">Hotspots</a></li>
+        <li><a href="festivals.html">Festivals</a></li>
+        <li><a href="history.html">History</a></li>
+      </ul>
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -21,7 +28,7 @@
         <img src="assets/images/me.png" alt="Alyssa Brucelo" />
       </a>
     </div>
-    <div class="nav-menu" id="nav-menu">
+    <div class="nav-dropdown" id="nav-menu">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="landmarks.html" class="active">Landmarks</a></li>
@@ -30,50 +37,39 @@
         <li><a href="history.html">History</a></li>
       </ul>
     </div>
-    <a href="developer.html" class="nav-profile" aria-label="Developer page">
-      <span>BRUCELO</span>
-      <img src="assets/images/me.png" alt="Alyssa Brucelo" />
-    </a>
   </nav>
 
   <main class="page-content">
     <h1 class="section-title">LANDMARKS</h1>
-
     <div class="slider-wrapper">
       <div class="slider-track" id="landmarks-slider">
 
         <div class="slide">
-          <div class="landmark-card clickable"
-               onclick="openModal('Jose G. Alindogan Elementary Central School', 'The Jose G. Alindogan Elementary Central School is one of the primary educational institutions in Juban, Sorsogon. It serves as the central elementary school of the Juban District, providing quality basic education to the children of Juban since 1923. Generations upon generations of Jubangnon has graced these halls, creating a legacy of learning and growth.', 'assets/images/jgaes.png')">
+          <div class="landmark-card clickable" onclick="openModal('Jose G. Alindogan Elementary Central School','The Jose G. Alindogan Elementary Central School is one of the primary educational institutions in Juban, Sorsogon. It serves as the central elementary school of the Juban District, providing quality basic education to the children of Juban since 1923. Generations upon generations of Jubangnon has graced these halls, creating a legacy of learning and growth.','assets/images/jgaes.png')">
             <img src="assets/images/jgaes.png" alt="Jose G. Alindogan Elementary Central School" />
             <div class="landmark-label">Jose G. Alindogan Elem. Central School</div>
           </div>
-          <div class="landmark-card clickable"
-               onclick="openModal('Juban Institute', 'Juban Institute originated as a branch of the Albay Institute (now Bicol College) in Legazpi City. It was founded in 1952, and is currently home to Jubangnon students and faculty.', 'assets/images/jubaninstitute.png')">
+          <div class="landmark-card clickable" onclick="openModal('Juban Institute','Juban Institute originated as a branch of the Albay Institute (now Bicol College) in Legazpi City. It was founded in 1952, and is currently home to Jubangnon students and faculty.','assets/images/jubaninstitute.png')">
             <img src="assets/images/jubaninstitute.png" alt="Juban Institute" />
             <div class="landmark-label">Juban Institute</div>
           </div>
-          <div class="landmark-card clickable"
-               onclick="openModal('Juban National High School', 'Juban National High School (Juban NHS) is the main public secondary school in Juban, Sorsogon. The school takes pride in its well-maintained grounds and facilities. The colorful &quot;We ❤ Juban NHS&quot; signage at the entrance reflects the school spirit and community pride of its students and faculty.', 'assets/images/jnhs.png')">
+          <div class="landmark-card clickable" onclick="openModal('Juban National High School','Juban National High School (Juban NHS) is the main public secondary school in Juban, Sorsogon. The school takes pride in its well-maintained grounds and facilities. The colorful &quot;We ❤ Juban NHS&quot; signage at the entrance reflects the school spirit and community pride of its students and faculty.','assets/images/jnhs.png')">
             <img src="assets/images/jnhs.png" alt="Juban National High School" />
             <div class="landmark-label">Juban National High School</div>
           </div>
         </div>
 
         <div class="slide">
-          <div class="landmark-card clickable"
-               onclick="openModal('Cagpacol View Deck', 'A landmark that warmly welcomes you to the town of Juban. Surrounded by manicured lawns with the scenic mountains of Sorsogon in the background, this landmark captures the spirit and love that residents have for their hometown.', 'assets/images/cagpacolpark.png')">
+          <div class="landmark-card clickable" onclick="openModal('Cagpacol View Deck','A landmark that warmly welcomes you to the town of Juban. Surrounded by manicured lawns with the scenic mountains of Sorsogon in the background, this landmark captures the spirit and love that residents have for their hometown.','assets/images/cagpacolpark.png')">
             <img src="assets/images/cagpacolpark.png" alt="Cagpacol View Deck" />
             <div class="landmark-label">Cagpacol View Deck</div>
           </div>
-          <div class="landmark-card clickable"
-               onclick="openModal('Bahay na Bato', 'This serves as one of the oldest houses in Juban. This grand old ancestral house stands as a testament to Juban\'s rich colonial heritage. Its intricate woodwork, ornate balustrades, and classical Filipino-Spanish architectural style speak of a prosperous past. Though weathered by time, the structure remains a vivid reminder of the craftsmanship and history embedded in Juban\'s built environment.', 'assets/images/bato.png')">
+          <div class="landmark-card clickable" onclick="openModal('Bahay na Bato','This serves as one of the oldest houses in Juban. This grand old ancestral house stands as a testament to Juban\'s rich colonial heritage. Its intricate woodwork, ornate balustrades, and classical Filipino-Spanish architectural style speak of a prosperous past. Though weathered by time, the structure remains a vivid reminder of the craftsmanship and history embedded in Juban\'s built environment.','assets/images/bato.png')">
             <img src="assets/images/bato.png" alt="Ancestral House" />
             <div class="landmark-label">Ancestral House</div>
           </div>
-          <div class="landmark-card clickable"
-               onclick="openModal('Juban Boulevard and Mangrove Park', 'Home of marine creatures and the ever resilient mangrove trees, visit Juban Boulevard and Mangrove Park at Embarcadero-Tughan, Juban, Sorsogon for a quick eco-tour with a perfect view of Mt. Bulusan.', 'assets/images/jubanmangrove.png')">
-            <img src="assets/images/jubanmangrove.png" alt="Juban Boulevard" />
+          <div class="landmark-card clickable" onclick="openModal('Juban Boulevard and Mangrove Park','Visit the critical habitat of Juban Boulevard and Mangrove Park at Embarcadero-Tughan, Juban, Sorsogon for a quick eco-tour with a perfect view of Mt. Bulusan.','assets/images/jubanmangrove.png')">
+            <img src="assets/images/jubanmangrove.png" alt="Juban River" />
             <div class="landmark-label">Juban Boulevard and Mangrove Park</div>
           </div>
         </div>
