@@ -16,7 +16,7 @@
   --text-white: #ffffff;
   --text-light: #e8f4f8;
   --text-muted: #b8d8e0;
-  --nav-height: 80px;
+  --nav-height: 60px;
   --card-radius: 16px;
   --card-radius-sm: 12px;
 }
@@ -75,32 +75,26 @@ h1, h2, h3, h4, h5, h6 {
   );
 }
 
-/* ===== NAVBAR ===== */
+/* ===== NAVBAR — DESKTOP ===== */
 nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 32px;
-  height: var(--nav-height);
   background: rgba(20, 73, 90, 0.55);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-/* Hide brand-row wrapper on desktop — it's only used on mobile */
-.nav-brand-row {
-  display: none;
-}
-
-.nav-menu {
+/* Inner wrapper keeps desktop layout as one row */
+.nav-inner {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  padding: 0 32px;
 }
 
 .nav-links {
@@ -159,14 +153,14 @@ nav {
 }
 
 .nav-profile img {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid rgba(255,255,255,0.3);
 }
 
-/* Hamburger */
+/* Hamburger — hidden on desktop */
 .nav-toggle {
   display: none;
   background: none;
@@ -174,7 +168,8 @@ nav {
   cursor: pointer;
   flex-direction: column;
   gap: 5px;
-  padding: 4px;
+  padding: 8px;
+  z-index: 10;
 }
 
 .nav-toggle span {
@@ -184,6 +179,31 @@ nav {
   background: var(--text-white);
   border-radius: 2px;
   transition: all 0.3s ease;
+}
+
+/* Mobile dropdown — hidden by default, shown when .open */
+.nav-dropdown {
+  display: none;
+  flex-direction: column;
+  padding: 8px 16px 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-dropdown.open {
+  display: flex;
+}
+
+.nav-dropdown .nav-links {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  width: 100%;
+}
+
+.nav-dropdown .nav-links a {
+  width: 100%;
+  padding: 11px 12px;
+  font-size: 16px;
 }
 
 /* ===== PAGE WRAPPER ===== */
@@ -301,78 +321,24 @@ nav {
 }
 
 /* ===== SCROLLBAR ===== */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg-darker);
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(240, 168, 48, 0.4);
-  border-radius: 3px;
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-darker); }
+::-webkit-scrollbar-thumb { background: rgba(240, 168, 48, 0.4); border-radius: 3px; }
 
-/* ===== RESPONSIVE NAV ===== */
+/* ===== MOBILE NAV ===== */
 @media (max-width: 768px) {
-  nav {
-    flex-wrap: wrap;
-    height: auto;
-    min-height: var(--nav-height);
+  .nav-inner {
     padding: 0 16px;
-    align-items: flex-start;
   }
 
-  /* Show the brand row (hamburger + profile on same line) */
-  .nav-brand-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: var(--nav-height);
+  /* Hide desktop link list inside nav-inner */
+  .nav-inner .nav-links-desktop {
+    display: none;
   }
 
+  /* Show hamburger */
   .nav-toggle {
     display: flex;
-  }
-
-  /* Profile moves inside brand-row on mobile via HTML structure */
-  /* Hide the original nav-profile that's outside brand-row */
-  nav > .nav-profile {
-    display: none;
-  }
-
-  /* Show a profile link inside brand-row */
-  .nav-brand-row .nav-profile {
-    display: flex;
-  }
-
-  /* Collapsible menu */
-  .nav-menu {
-    display: none;
-    width: 100%;
-    padding: 8px 0 16px;
-    order: 3;
-  }
-
-  .nav-menu.open {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-    width: 100%;
-  }
-
-  .nav-links a {
-    width: 100%;
-    padding: 10px 12px;
-  }
-
-  .page-content {
-    padding-top: var(--nav-height);
   }
 
   .section-title {
@@ -385,6 +351,6 @@ nav {
     display: none;
   }
   .nav-profile {
-    padding: 4px;
+    padding: 5px;
   }
 }
