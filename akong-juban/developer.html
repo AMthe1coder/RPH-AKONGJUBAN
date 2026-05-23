@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akong Juban – Developer</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/developer.css" />
+</head>
+<body>
+
+  <div class="page-bg"></div>
+
+  <nav>
+    <div class="nav-brand-row">
+      <div></div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-menu" id="nav-menu">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="landmarks.html">Landmarks</a></li>
+        <li><a href="hotspots.html">Hotspots</a></li>
+        <li><a href="festivals.html">Festivals</a></li>
+        <li><a href="history.html">History</a></li>
+      </ul>
+    </div>
+    <a href="developer.html" class="nav-profile active-profile" aria-label="Developer page">
+      <span>BRUCELO</span>
+      <img src="assets\images\me.png" alt="Alyssa Brucelo" />
+    </a>
+  </nav>
+
+  <main class="page-content">
+    <section class="developer-layout">
+
+      <!-- Left: Info -->
+      <div class="dev-info-col">
+
+        <div class="dev-card">
+          <h2 class="dev-card-title">SHORT DESCRIPTION OF PROJECT</h2>
+          <p>
+            <strong>AkongJuban</strong>, is primarily created as a way of promote one of the oldest and history-rich towns in Sorsogon, as well as a final project for <strong>Readings in Philippine History</strong>, which is creating materials to promote our hometown.
+          </p>
+        </div>
+
+        <div class="dev-card">
+          <h2 class="dev-card-title">WHY A WEBPAGE?</h2>
+          <p>
+            As an IT student, I possess the skills and abilities to create one. One of the faster ways to promote things is through the internet, especially as nowadays, we rely on the web to give us information about topics, we wouldn't otherwise know about without it.
+          </p>
+          <p>
+            Additionally when researching about what to put into this webpage, I find that there is a lack of information material about my hometown, if there ever was, it would be scarce and incomplete, which is why I opted to create a static webpage.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Right: Developer profile -->
+      <div class="dev-profile-col">
+
+        <div class="dev-profile-card">
+          <div class="dev-avatar-wrap">
+            <img src="assets\images\me.png" alt="Alyssa Mae Brucelo" class="dev-avatar" />
+          </div>
+          <h3 class="dev-name">ALYSSA MAE BRUCELO</h3>
+          <p class="dev-course">BSIT 3C</p>
+        </div>
+
+        <div class="dev-role-badge">
+          <span>DEVELOPER</span>
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+      <img class="modal-img" id="modal-img" src="" alt="" />
+      <div class="modal-body">
+        <h2 id="modal-title"></h2>
+        <p id="modal-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

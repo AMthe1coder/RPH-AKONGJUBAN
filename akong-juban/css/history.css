@@ -1,0 +1,124 @@
+/* ===== HISTORY LAYOUT ===== */
+.history-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  padding: 0 40px 48px;
+  max-width: 1300px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.history-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.history-right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Map card */
+.history-map-card {
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.1);
+  flex-shrink: 0;
+}
+
+.history-map-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+/* History cards */
+.history-card {
+  background: rgba(25, 72, 88, 0.75);
+  border-radius: var(--card-radius);
+  padding: 28px 32px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+.history-card-title {
+  font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+  font-size: clamp(13px, 1.8vw, 16px);
+  font-weight: 800;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+}
+
+.history-card p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text-light);
+  text-align: justify;
+}
+
+.history-card p strong {
+  color: var(--text-white);
+  font-weight: 700;
+}
+
+/* "When" card — left-aligned title, fills remaining space */
+.history-when {
+  flex: 1;
+}
+
+.history-when .history-card-title {
+  text-align: left;
+}
+
+/* "Established" card — fills full right column height, centered content */
+.history-established {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.history-established .history-card-title {
+  text-align: center;
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+.history-established p {
+  font-size: clamp(15px, 1.6vw, 17px);
+  line-height: 1.85;
+  text-align: justify;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .history-layout {
+    grid-template-columns: 1fr;
+    padding: 0 20px 40px;
+    gap: 20px;
+  }
+
+  .history-map-card img {
+    height: 260px;
+  }
+
+  .history-established {
+    flex: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .history-card {
+    padding: 20px;
+  }
+
+  .history-map-card img {
+    height: 210px;
+  }
+}

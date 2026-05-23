@@ -1,0 +1,161 @@
+/* ===== DEVELOPER LAYOUT ===== */
+.developer-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 32px;
+  padding: 40px 40px 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+  min-height: calc(100vh - var(--nav-height) - 40px);
+}
+
+/* Info column */
+.dev-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dev-card {
+  background: rgba(25, 72, 88, 0.75);
+  border-radius: var(--card-radius);
+  padding: 32px 36px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+.dev-card-title {
+  font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+  font-size: clamp(13px, 1.8vw, 15px);
+  font-weight: 800;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.dev-card p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text-light);
+  text-align: justify;
+  margin-bottom: 14px;
+}
+
+.dev-card p:last-child {
+  margin-bottom: 0;
+}
+
+.dev-card p strong {
+  color: var(--text-white);
+  font-weight: 700;
+}
+
+/* Profile column */
+.dev-profile-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  position: sticky;
+  top: calc(var(--nav-height) + 20px);
+}
+
+.dev-profile-card {
+  background: rgba(25, 72, 88, 0.75);
+  border-radius: var(--card-radius);
+  padding: 36px 28px 28px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.dev-avatar-wrap {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgba(255,255,255,0.2);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  background: var(--bg-darker);
+}
+
+.dev-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.dev-name {
+  font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+  font-size: clamp(16px, 2.5vw, 20px);
+  font-weight: 800;
+  color: var(--text-white);
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.dev-course {
+  font-size: 14px;
+  color: var(--text-muted);
+  text-align: center;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+.dev-role-badge {
+  background: rgba(25, 72, 88, 0.75);
+  border-radius: var(--card-radius);
+  padding: 20px 40px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+.dev-role-badge span {
+  font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 900;
+  color: var(--accent-gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.active-profile {
+  border-color: rgba(240, 168, 48, 0.5);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .developer-layout {
+    grid-template-columns: 1fr;
+    padding: 28px 20px 40px;
+    gap: 24px;
+  }
+
+  .dev-profile-col {
+    position: relative;
+    top: 0;
+    order: -1;
+  }
+
+  .dev-avatar-wrap {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dev-card {
+    padding: 20px;
+  }
+}

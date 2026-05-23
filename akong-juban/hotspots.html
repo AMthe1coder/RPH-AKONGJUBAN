@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akong Juban – Hotspots</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/hotspots.css" />
+</head>
+<body>
+
+  <div class="page-bg"></div>
+
+  <nav>
+    <div class="nav-brand-row">
+      <div></div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-menu" id="nav-menu">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="landmarks.html">Landmarks</a></li>
+        <li><a href="hotspots.html" class="active">Hotspots</a></li>
+        <li><a href="festivals.html">Festivals</a></li>
+        <li><a href="history.html">History</a></li>
+      </ul>
+    </div>
+    <a href="developer.html" class="nav-profile" aria-label="Developer page">
+      <span>BRUCELO</span>
+      <img src="assets\images\me.png" alt="Alyssa Brucelo" />
+    </a>
+  </nav>
+
+  <main class="page-content">
+    <h1 class="section-title">HOTSPOTS</h1>
+
+    <div class="hotspots-grid">
+
+      <div class="hotspot-card" onclick="openModal(
+        'Cold Springs',
+        'While not boasting the same amount of hotsprings like Irosin, Juban has its own share of natural cold springs. Namely, one of the more popular springs to mention is the La Kristy Resort in Anog, Juban, Sorsogon and Tangke Nature Spring in Bacolod, Juban, Sorsogon. It is certainly a hotspot for families, especially during the scorching heats brought by the summer wave. ',
+        'assets/images/hotspring.png'
+      )">
+        <img src="assets\images\hotspring.png" alt="Cadac-an River" />
+        <div class="hotspot-overlay">
+          <span>Cold Springs</span>
+        </div>
+      </div>
+
+      <div class="hotspot-card" onclick="openModal(
+        'Ancestral Houses of Juban',
+        'Juban is known for its well-preserved ancestral homes, some dating back to the Spanish colonial era. These two-story structures feature intricate capiz shell windows, ornate wooden balustrades, and classical Filipino-Spanish architectural details. Walking through the town center reveals a living museum of heritage architecture, a testament to the prosperity and craftsmanship of Juban\'s early inhabitants. You can even stay overnight at one of these houses, like Casa De Feliz.',
+        'assets/images/oldhouses.png'
+      )">
+        <img src="assets\images\oldhouses.png" alt="Ancestral Houses" />
+        <div class="hotspot-overlay">
+          <span>Ancestral Houses</span>
+        </div>
+      </div>
+
+      <div class="hotspot-card" onclick="openModal(
+        'Juban Night Market',
+        'The Juban Night Market is a lively gathering place where residents and visitors come together after dark to enjoy local food, goods, and community spirit. The LGU even recently established a local band, which performs every night at the night market. Recently, the activities has stopped due to renovations, but rest assured, it will be finished in time for the next fiesta.',
+        'assets/images/concert.png'
+      )">
+        <img src="assets\images\concert.png" alt="Night Market" />
+        <div class="hotspot-overlay">
+          <span>Night Market & Concerts</span>
+        </div>
+      </div>
+
+      <div class="hotspot-card" onclick="openModal(
+        'St. Anthony of Padua Parish Church',
+        'The St. Anthony of Padua Parish Church is the spiritual heart of Juban, Sorsogon. Established as an independent parish in 1817 with St. Anthony of Padua as its Titular Head, this church has been the center of faith and community life for over two centuries. The church\'s distinctive facade, featuring a prominent cross and Spanish-influenced architecture, is one of the most recognizable landmarks in the municipality. Parishioners gather here to celebrate the town\'s fiesta in honor of St. Anthony every June 20.',
+        'assets/images/church.png'
+      )">
+        <img src="assets\images\church.png" alt="St. Anthony Parish Church" />
+        <div class="hotspot-overlay">
+          <span>St. Anthony of Padua Parish Church</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+      <img class="modal-img" id="modal-img" src="" alt="" />
+      <div class="modal-body">
+        <h2 id="modal-title"></h2>
+        <p id="modal-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

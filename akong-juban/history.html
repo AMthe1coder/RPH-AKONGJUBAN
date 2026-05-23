@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akong Juban – History</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/history.css" />
+</head>
+<body>
+
+  <div class="page-bg"></div>
+
+  <nav>
+    <div class="nav-brand-row">
+      <div></div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-menu" id="nav-menu">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="landmarks.html">Landmarks</a></li>
+        <li><a href="hotspots.html">Hotspots</a></li>
+        <li><a href="festivals.html">Festivals</a></li>
+        <li><a href="history.html" class="active">History</a></li>
+      </ul>
+    </div>
+    <a href="developer.html" class="nav-profile" aria-label="Developer page">
+      <span>BRUCELO</span>
+      <img src="assets\images\me.png" alt="Alyssa Brucelo" />
+    </a>
+  </nav>
+
+  <main class="page-content">
+    <h1 class="section-title">HISTORY</h1>
+
+    <section class="history-layout">
+
+      <!-- Left: Map + When card -->
+      <div class="history-left">
+        <div class="history-map-card">
+          <img src="assets/images/map.png" alt="Map of Juban, Sorsogon" />
+        </div>
+        <div class="history-card history-when">
+          <h3 class="history-card-title">WHEN WAS JUBAN OFFICIALLY A TOWN?</h3>
+          <p>
+            Juban was officially established as a pueblo on <strong>April 7, 1799</strong>, originally built as a defense against pirate attacks.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: Established -->
+      <div class="history-right">
+        <div class="history-card history-established">
+          <h3 class="history-card-title">HOW JUBAN WAS ESTABLISHED</h3>
+          <p>
+            <strong>Juban's roots trace back to the late Spanish colonial era.</strong> Originally part of Casiguran, the town emerged from the ashes of Moro raids in the mid-1700s. Settlers found refuge along the Cadac-an River, where they discovered the Milipili tree, a source of resin used for lighting before petroleum was introduced. The practice of extracting sap—called gujub—gave rise to the name Gujuban, later shortened to Juban. By 1817, it was organized as a separate parish, and the 1818 census recorded 396 native families alongside 18 Spanish-Filipino families. The town flourished during the late 19th and early 20th centuries. Juban became a prominent seat for wealthy clans (such as the Grajos, Guevaras, Alindogans, and Gorospes) who built the grand, well-preserved bahay na bato that still line the Maharlika Highway today
+          </p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+      <img class="modal-img" id="modal-img" src="" alt="" />
+      <div class="modal-body">
+        <h2 id="modal-title"></h2>
+        <p id="modal-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+/* ===== SLIDER ===== */
+.slider-wrapper {
+  overflow: hidden;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+  padding: 0 32px 20px;
+}
+
+/* ===== LANDMARK CARDS ===== */
+.landmark-card {
+  flex: 1;
+  max-width: 420px;
+  background: rgba(20, 70, 85, 0.5);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.landmark-card.clickable {
+  cursor: pointer;
+}
+
+.landmark-card.clickable:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 50px rgba(0,0,0,0.5);
+  border-color: rgba(240, 168, 48, 0.3);
+}
+
+.landmark-card img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.landmark-card.clickable:hover img {
+  transform: scale(1.04);
+}
+
+.landmark-label {
+  padding: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+/* ===== DOTS ===== */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 0;
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.dot.active {
+  background: var(--accent-gold);
+  transform: scale(1.2);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .slide {
+    gap: 14px;
+    padding: 0 16px 16px;
+  }
+
+  .landmark-card img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 560px) {
+  .slide {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .landmark-card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .landmark-card img {
+    height: 200px;
+  }
+}
+
+/* ===== SLIDER ARROWS ===== */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%);
+  z-index: 10;
+  background: rgba(20, 70, 85, 0.6);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 36px;
+  line-height: 1;
+  width: 44px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: background 0.2s ease, opacity 0.2s ease;
+  padding: 0;
+}
+
+.slider-arrow:hover {
+  background: rgba(240, 168, 48, 0.35);
+}
+
+.slider-arrow--left  { left: 0; }
+.slider-arrow--right { right: 0; }
