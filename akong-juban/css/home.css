@@ -148,14 +148,14 @@
 }
 
 @media (max-width: 480px) {
-  .hero-img-card {
-    width: 95px;
-    height: 175px;
-    border-radius: 14px;
+  .hero-images {
+    gap: 10px;
   }
 
-  .hero-img-card:first-child {
-    display: none;
+  .hero-img-card {
+    width: 85px;
+    height: 160px;
+    border-radius: 14px;
   }
 
   .hero-title {
