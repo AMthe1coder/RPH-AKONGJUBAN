@@ -82,15 +82,25 @@ nav {
   left: 0;
   right: 0;
   z-index: 100;
-  height: var(--nav-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 32px;
+  height: var(--nav-height);
   background: rgba(20, 73, 90, 0.55);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Hide brand-row wrapper on desktop — it's only used on mobile */
+.nav-brand-row {
+  display: none;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
 }
 
 .nav-links {
@@ -305,27 +315,48 @@ nav {
 /* ===== RESPONSIVE NAV ===== */
 @media (max-width: 768px) {
   nav {
-    padding: 0 16px;
     flex-wrap: wrap;
     height: auto;
     min-height: var(--nav-height);
+    padding: 0 16px;
+    align-items: flex-start;
+  }
+
+  /* Show the brand row (hamburger + profile on same line) */
+  .nav-brand-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: var(--nav-height);
   }
 
   .nav-toggle {
     display: flex;
   }
 
+  /* Profile moves inside brand-row on mobile via HTML structure */
+  /* Hide the original nav-profile that's outside brand-row */
+  nav > .nav-profile {
+    display: none;
+  }
+
+  /* Show a profile link inside brand-row */
+  .nav-brand-row .nav-profile {
+    display: flex;
+  }
+
+  /* Collapsible menu */
   .nav-menu {
     display: none;
     width: 100%;
-    padding: 12px 0 16px;
+    padding: 8px 0 16px;
     order: 3;
   }
 
   .nav-menu.open {
     display: flex;
     flex-direction: column;
-    gap: 4px;
   }
 
   .nav-links {
@@ -340,16 +371,8 @@ nav {
     padding: 10px 12px;
   }
 
-  .nav-brand-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 16px 0 8px;
-  }
-
   .page-content {
-    padding-top: calc(var(--nav-height));
+    padding-top: var(--nav-height);
   }
 
   .section-title {
